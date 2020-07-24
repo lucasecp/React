@@ -1,0 +1,70 @@
+h1{
+  text-align: center;
+  color: wheat;
+  font-weight: 500;
+}
+.main{
+
+  margin:30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+.equalError{
+  border:red solid 1px !important;
+
+}
+
+button{
+  border-radius: 10px;
+  border: solid 1px #fff7;
+  color: white;
+  background-color: #0D2840 ;
+  cursor: pointer;
+  padding: 7px;
+  outline: medium;
+}
+input[type='text']{
+  margin-right:5px;
+  border-radius: 10px;
+  height: 20px;
+  padding: 7px;
+  outline: medium;
+  background-color: #0D2840;
+  border:#fff solid 1px ;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+}
+button:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+  border: solid white 1px;
+}
+.tarefas{
+  color: whitesmoke;
+  font-weight: 600;
+  width:100%;
+  display :flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.tarefas li{
+  padding: 15px;
+  margin: 0
+}
+.img{
+  margin-left: 50px;
+  margin-bottom: 0;
+}
+img:hover{
+   cursor: pointer
+}
+img{
+margin:5px 5px 0;
+background-color: #0D2840;
+
+}
+
