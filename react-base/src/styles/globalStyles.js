@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
 *{
@@ -22,6 +23,6 @@ button{
 export const Container = styled.main`
   max-width: 400px;
   margin: 50px auto;
-  background: #FEFEFE;
-  box-shadow: 4px 4px 4px #000a
+  background: #fefefe;
+  box-shadow: 4px 4px 4px #000a;
 `;
