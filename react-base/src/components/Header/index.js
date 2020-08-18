@@ -9,7 +9,7 @@ import * as action from '../../store/modules/auth/actions'
 export default function () {
   const dispatch = useDispatch()
   const {email,name}= useSelector(state => state.auth.user)
-  function handleClick(e){
+  function handleClick(){
     dispatch(action.loginFalure())
     return history.push('/')
    }

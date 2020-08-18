@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -17,15 +18,15 @@ export const Form = styled.form`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background:#eee;
+    background: #eee;
   }
-  h1{
-    margin-bottom:20px;
-    font-size:20px;
+  h1 {
+    margin-bottom: 20px;
+    font-size: 20px;
     color: #0009;
   }
 
-  img{
+  img {
     height: 100%;
     width: 100%;
   }

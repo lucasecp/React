@@ -10,26 +10,26 @@ export const Nav = styled.nav`
     font-size: 15px;
     justify-self: center;
   }
-  .userIsLogged{
+  .userIsLogged {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 3px;
-    }
-  .userIsLogged div{
+  }
+  .userIsLogged div {
     color: #fff;
     justify-self: center;
   }
-  .userData{
+  .userData {
     margin-right: 20px;
   }
-  .userData img{
+  .userData img {
     margin-left: 5px;
   }
-  .userIsNotLogged svg{
-   margin-right:20px;
+  .userIsNotLogged svg {
+    margin-right: 20px;
   }
-  .userIsNotLogged{
-    padding: 5px
+  .userIsNotLogged {
+    padding: 5px;
   }
 `;

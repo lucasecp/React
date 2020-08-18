@@ -16,7 +16,7 @@ import Loading from '../../components/Loading';
 export default function Login() {
   const [alunos, setAlunos] = useState([]);
   const [currentAluno, setAluno] = useState([]);
-  const [index,setIndex] = useState(-1)
+  const [index, setIndex] = useState(-1);
   const [modal, setModal] = useState(false);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -28,11 +28,11 @@ export default function Login() {
     }
     getData();
   }, []);
-  const handleClickAsk = (e, index, aluno) => {
+  const handleClickAsk = (e, i, aluno) => {
     e.preventDefault();
     setAluno(aluno);
     setModal(true);
-    setIndex(index)
+    setIndex(i);
   };
   const handleClickWindow = (e) => {
     const modalContainer = document.querySelector('.modal');
@@ -93,13 +93,10 @@ export default function Login() {
         aluno
       </MyLink>
       <ContainerAluno>
-        {alunos.map((aluno, index) => (
+        {alunos.map((aluno, indice) => (
           <div key={aluno.id}>
             {get(aluno, 'Photos[0].url', false) ? (
-              <img
-                src={aluno.Photos[aluno.Photos.length - 1].url}
-                alt="foto"
-              />
+              <img src={aluno.Photos[aluno.Photos.length - 1].url} alt="foto" />
             ) : (
               <FaUserCircle size="40px" color="#000d" />
             )}
@@ -110,7 +107,7 @@ export default function Login() {
             </Link>
             <Link
               to={`/aluno/${aluno.id}/delete`}
-              onClick={(e) => handleClickAsk(e, index, aluno)}
+              onClick={(e) => handleClickAsk(e, indice, aluno)}
             >
               <FaWindowClose size="25px" color="#dc3545" />
             </Link>

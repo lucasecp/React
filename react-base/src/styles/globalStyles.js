@@ -19,7 +19,7 @@ button{
 }
 `;
 export const Container = styled.main`
-  max-width: ${props => props.width ? props.width : "400px"};
+  max-width: ${(props) => (props.width ? props.width : '400px')};
   margin: 50px auto;
   background: #fefefe;
   box-shadow: 4px 4px 4px #000a;

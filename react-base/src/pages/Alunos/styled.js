@@ -5,7 +5,7 @@ export const Title = styled.h2`
   padding: 20px 10px;
   color: #000e;
   margin-left: 20px;
-  display:inline-block;
+  display: inline-block;
 `;
 export const ContainerAluno = styled.div`
   padding: 30px 20px;
@@ -86,5 +86,5 @@ export const MyLink = styled(Link)`
   color: green;
   font-size: 20px;
   float: right;
-  padding:20px 20px 0 0;
+  padding: 20px 20px 0 0;
 `;

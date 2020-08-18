@@ -11,8 +11,8 @@ export default function (props) {
   const [foto, setFoto] = React.useState('')
   const [loading, setLoading] = React.useState(false)
    React.useEffect(()=>{
-     if(id === undefined) return;
      async function getData(){
+      if(id === undefined) return;
       setLoading(true)
        try{
        const {data} = await axios.get(`/alunos/${id}`)
@@ -25,9 +25,9 @@ export default function (props) {
          const {status} = get(e,'response', '')
          if(status === 401){
            toast.warning('usuario não autorizado')
+           error.map((err)=> toast.error(err))
            return history.push('/')
          }
-         error.map((err)=> toast.error(err))
        }
      }
      getData()
