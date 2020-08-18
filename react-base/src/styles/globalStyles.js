@@ -10,10 +10,8 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
 }
-body, #root{
-  height: 100vh;
-}
-#root{
+
+body{
   background:  #262626
 }
 button{
@@ -21,7 +19,7 @@ button{
 }
 `;
 export const Container = styled.main`
-  max-width: 400px;
+  max-width: ${props => props.width ? props.width : "400px"};
   margin: 50px auto;
   background: #fefefe;
   box-shadow: 4px 4px 4px #000a;

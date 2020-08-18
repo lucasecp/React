@@ -1,35 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaEnvelope, FaKey } from 'react-icons/fa';
-import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import { get } from 'lodash';
 import { Container } from '../../styles/globalStyles';
-import { Title, Form } from './styled';
-import { clickBtnRequest } from '../../store/modules/exemple/actions';
+import { Title, Form, TitleContainer } from './styled';
+import * as action from '../../store/modules/auth/actions';
+import Loading from '../../components/Loading';
 
-export default function Login() {
-  const dispach = useDispatch();
-  function handleClick(e) {
+export default function Login(props) {
+  const dispatch = useDispatch();
+  const loading = useSelector(state => state.auth.loading);
+  const prevPath = get(props, 'location.state.prevPath', '/');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const handleSubmit = (e) => {
     e.preventDefault();
+    const error = [];
 
-    dispach(clickBtnRequest());
-  }
+    if (!email.trim() || !password.trim()) {
+      error.push('Campos vazios');
+    }
+    if (error.length > 0) return error.map((err) => toast.error(err));
+    return dispatch(action.loginRequest({ email, password, prevPath }));
+  };
 
   return (
     <Container>
-      <Title> Login </Title>
-      <Form>
+      <Loading isLoading={loading} />
+      <TitleContainer>
+        <Title> Login </Title>
+        <Link to="/register">
+          <Title className="login">Criar usuário</Title>
+        </Link>
+      </TitleContainer>
+
+      <Form onSubmit={handleSubmit}>
         <div>
           <FaEnvelope className="inputIcon" />
-          <input required type="email" name="email" placeholder="Email" />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+          />
         </div>
-
         <div>
           <FaKey className="inputIcon" />
-          <input required type="password" name="password" placeholder="Senha" />
+          <input
+            type="password"
+            name="password"
+            placeholder="Senha"
+            required
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          />
         </div>
-
-        <button type="submit" onClick={handleClick}>
-          Entrar
-        </button>
+        <button type="submit">Entrar</button>
       </Form>
     </Container>
   );

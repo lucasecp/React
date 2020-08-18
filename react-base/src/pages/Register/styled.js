@@ -4,22 +4,20 @@ export const Title = styled.h2`
   font-size: 22px;
   margin: 20px 10px;
   color: #0009;
-  text-align: center;
+  display: inline-block;
 `;
-
 export const TitleContainer = styled.div`
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
-  .login{
-    color: #007bff ;
+  .login {
+    color: #007bff;
     font-size: 15px;
     text-decoration: underline;
-    margin: 0
+    margin: 0;
   }
-
-`
+`;
 
 export const Form = styled.form`
   width: 100%;
@@ -33,9 +31,9 @@ export const Form = styled.form`
     padding-left: 20px;
     margin: 10px auto;
     outline: none;
-    width:300px
+    width: 300px;
   }
-  input:focus{
+  input:focus {
     border: solid #dc3545 0.5px;
   }
   .inputIcon {
@@ -57,6 +55,6 @@ export const Form = styled.form`
     transition: 0.1s;
   }
   button:hover {
-    background: #A60522;
+    background: #a60522;
   }
 `;
